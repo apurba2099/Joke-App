@@ -7,6 +7,8 @@ const GenerateBtn = document.querySelector(".generatorbtn");
 const url =
   "https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
 
+const tapSound = new Audio("./sound/tapSound.mp3");
+
 //logic//
 const getJoke = function () {
   jokePart.classList.remove("fade");
@@ -22,5 +24,6 @@ const getJoke = function () {
 };
 
 GenerateBtn.addEventListener("click", function () {
+  tapSound.play();
   getJoke();
 });
